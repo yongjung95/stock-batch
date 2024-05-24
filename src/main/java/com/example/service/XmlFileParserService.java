@@ -24,6 +24,11 @@ public class XmlFileParserService {
     public void parseXmlFile(String filePath) {
         try {
             File inputFile = new File(filePath);
+
+            inputFile.setReadable(true, false);
+            inputFile.setWritable(true, false);
+            inputFile.setExecutable(true, false);
+
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
