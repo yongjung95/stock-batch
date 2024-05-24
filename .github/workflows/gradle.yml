@@ -38,10 +38,10 @@ jobs:
       run: /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/gradlew clean build -x check
 
     - name: backup
-      run: mv /home/ubuntu/stock-batch/stock-0.0.1-master.jar /home/ubuntu/stock-batch/bak/stock-0.0.1-SNAPSHOT.jar_$(date '+%Y%m%d-%H%M%S')
+      run: mv /home/ubuntu/stock-batch/stock-batch-0.0.1-master.jar /home/ubuntu/stock-batch/bak/stock-batch-0.0.1-SNAPSHOT.jar_$(date '+%Y%m%d-%H%M%S')
 
     - name: deploy
-      run: mv /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/build/libs/stock-0.0.1-SNAPSHOT.jar /home/ubuntu/stock-batch/stock-0.0.1-master.jar
+      run: mv /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/build/libs/stock-batch-0.0.1-SNAPSHOT.jar /home/ubuntu/stock-batch/stock-0.0.1-master.jar
 
     - name: run
       run: cd /home/ubuntu/stock-batch && ./stock-batch.sh
