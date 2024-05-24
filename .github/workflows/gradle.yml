@@ -32,7 +32,7 @@ jobs:
       run: chmod +x /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/gradlew
 
     - name: Properties File Copy
-      run: cp /home/ubuntu/stock-batch/application.properties /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/src/main/resources/application.properties
+      run: cp /home/ubuntu/stock-batch/application-real.properties /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/src/main/resources/application-real.properties
 
     - name: Build with Gradle
       run: /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/gradlew clean build -x check
@@ -44,4 +44,4 @@ jobs:
       run: mv /home/ubuntu/stock-actions-runner/stock_work/stock-batch/stock-batch/build/libs/stock-0.0.1-SNAPSHOT.jar /home/ubuntu/stock-batch/stock-0.0.1-master.jar
 
     - name: run
-      run: cd /home/ubuntu/notify && ./notify.sh
+      run: cd /home/ubuntu/stock-batch && ./stock-batch.sh
