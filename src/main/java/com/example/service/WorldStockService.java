@@ -59,6 +59,7 @@ public class WorldStockService {
 
             JSONArray rows = result.getJSONObject("data").getJSONArray("rows");
 
+            log.info("API 호출 성공");
             for (int j = 0; j < rows.length(); j++) {
                 JSONObject jsonObject = rows.getJSONObject(j);
 
@@ -73,6 +74,8 @@ public class WorldStockService {
                 WorldStock findWorldStock = worldStockRepository.findBySymbol(symbol);
 
                 if (findWorldStock == null) {
+
+                    log.info("주식 정보 저장 시작");
                     Thread.sleep(50); // 무리한 호출 방지
 
                     WorldStock worldStock = WorldStock.builder()
