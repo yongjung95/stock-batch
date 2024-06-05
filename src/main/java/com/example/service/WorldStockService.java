@@ -43,12 +43,7 @@ public class WorldStockService {
 
     public void worldStockInfoUpdate(String exchange) {
         try {
-//            HttpClient client = HttpClient.newHttpClient();
-
-            HttpClient client = HttpClient.newBuilder()
-                    .version(HttpClient.Version.HTTP_1_1)
-                    .build();
-
+            HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(WORLD_STOCK_PATH + exchange))
                     .build();
