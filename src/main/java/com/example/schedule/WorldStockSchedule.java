@@ -38,12 +38,12 @@ public class WorldStockSchedule {
     public void reportCurrentTime() {
         if (isInitialRun) {
             // 서버 시작 시 한 번 실행한 이후 주기적으로 실행
-            log.info("서버 시작 시 최초 실행");
+            log.info("서버 시작 시 최초 미국 주식 가져오기 실행");
             service.worldStockInfoUpdate("AMEX");
             service.worldStockInfoUpdate("NASDAQ");
             service.worldStockInfoUpdate("NYSE");
         } else {
-            log.info(LocalDateTime.now() + " 실행");
+            log.info(LocalDateTime.now() + " 미국 주식 가져오기 실행");
 
             service.worldStockInfoUpdate("AMEX");
             service.worldStockInfoUpdate("NASDAQ");
