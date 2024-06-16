@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-@Component
-@EnableScheduling
+//@Component
+//@EnableScheduling
 @Slf4j
 public class WorldStockSchedule {
 
@@ -27,7 +27,7 @@ public class WorldStockSchedule {
         this.service = service;
     }
 
-    @EventListener(ContextRefreshedEvent.class)
+//    @EventListener(ContextRefreshedEvent.class)
     public void onApplicationEvent(ContextRefreshedEvent event) {
         // 서버 시작 시 한 번 실행
         reportCurrentTime();
